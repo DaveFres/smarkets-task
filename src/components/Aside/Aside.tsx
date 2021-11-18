@@ -25,7 +25,7 @@ const Aside = () => {
         </div>
         <ul className={b('content')}>
             {loading && <Loading />}
-            {(error || !asideData) && <ErrorPage />}
+            {(error || (!asideData && !loading)) && <ErrorPage />}
             {
                 showAsideData && asideData.map((newsEl: any, idx: number) => {
                     const startTime = newsEl['start_datetime'];
