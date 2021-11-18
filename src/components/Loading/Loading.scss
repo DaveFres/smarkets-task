@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.loading {
+    color: $mainWhite;
+
+    background: $mainBlack;
+
+    width: 100%;
+    height: 100%;
+}

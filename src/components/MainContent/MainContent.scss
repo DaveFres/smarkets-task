@@ -1,0 +1,194 @@
+@import "../../styles/variables.scss";
+
+.main-content {
+    background: #ccc;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 20px 10px 10px;
+
+    width: 100%;
+    overflow: auto;
+
+    background-color: $mainBlack;
+
+    &__header {
+        padding: 0 1.25rem;
+        width: 65%;
+        color: $mainWhite;
+    }
+
+    &__description {
+        font-size: 16px;
+    }
+
+    &__events {
+        &-wrapper {
+            padding: 0 1.25rem;
+        }
+
+        &-list {
+            list-style-type: none;
+            padding: 0;
+        }
+    }
+
+    &__event {
+        &-elem {
+            background-color: $blackSecondary;
+
+            align-content: center;
+            border-radius: 2px;
+            flex-direction: row;
+            min-height: 70px;
+            padding: 0;
+        }
+
+        &-info {
+            flex: 1;
+            padding: 10px 0 10px 10px;
+
+            &-name {
+                color: $mainWhite;
+
+                margin-bottom: 5px;
+            }
+
+            &-time,
+            &-badge {
+                color: $mainGray;
+                text-decoration: none;
+
+                text-transform: uppercase;
+
+                font-size: 12px;
+            }
+
+            &-time {
+                padding-right: 0.5rem;
+            }
+        }
+
+        &-link {
+            text-decoration: none;
+
+            display: flex;
+        }
+
+        &-contract {
+            &-items {
+                display: flex;
+
+                color: $mainWhite;
+
+                width: 20rem;
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-item {
+                width: 33.3%;
+
+                padding: 0 4px;
+            }
+        }
+    }
+
+    &__contract-label {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+
+        margin-bottom: 5px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+
+    &__event-elem:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__bid-offer-wrapper {
+        display: flex;
+    }
+
+    &__bid,
+    &__offer {
+        width: 50%;
+    }
+
+    &__bid-stake,
+    &__offer-stake {
+        font-size: 0.6875rem;
+        line-height: 0.8rem;
+
+        text-align: center;
+    }
+
+    &__bid-price,
+    &__offer-price {
+        margin-bottom: 2px;
+        border-radius: 2px;
+
+        font-size: 14px;
+
+        padding: 4px 0px;
+
+        text-align: center;
+    }
+
+    &__offer-price {
+        background-color: $mainGreen;
+
+        margin-right: 2px;
+    }
+
+    &__bid-price {
+        background-color: $mainBlue;
+
+        margin-left: 2px;
+    }
+
+    &__time-icon {
+        height: 12px;
+        width: 12px;
+
+        transform: translateY(2px);
+        margin-right: 2px;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        &__event-link {
+            flex-direction: column;
+        }
+
+        &__event-contract-items {
+            width: 100%;
+
+            border: 1px solid $mainBlack;
+
+            padding-top: 4px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main-content {
+        &__event-contract-items {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.navigation {
+    background: $backgroundAside;
+    color: $mainWhite;
+    width: 240px;
+    padding: 20px 10px 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    visibility: hidden;
+    transition: 0.5s;
+
+    visibility: visible;
+
+    &_closed {
+        visibility: hidden;
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .navigation {
+        width: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+}
